@@ -161,6 +161,8 @@ Naj bo $f: K \to L$ homomorfizem kolobarjev (velja tudi za grupe). Potem je $\te
 \subsubsection*{Osnovni izrek algebre}
 Vsak nekonstanten polinom $a_n x^n + \dots + a_0$ ima natanko $n$ kompleksnih ničel (štetih z večkratnostjo).
 
+
+
 \subsection*{Trigonometrične identitete}
 \begin{align*}
 	&\sin(x \pm y) = \sin(x) \cos(y) \pm \cos(x) \sin(y) \\
@@ -185,6 +187,14 @@ Nekonstanten polinom, ki ni razcepen je \textbf{nerazcepen}.
 
 Polinom $a_n x^n + \dots + a_0$ je \textbf{primitiven}, če velja $\gcd(a_0, \dots, a_n) = 1$
 
+\subsubsection*{Kandidati za ničle polinoma}
+
+Naj bo $p(x) = a_k x^k + \dots + a_0 ; \quad a_i \in \mathbb{Z}$. \\
+Kdaj je lahko $\frac{m}{n}; \ GCD(m,n) = 1$ ničla?\\
+$$n | a_k \quad \text{in} \quad m | a_0$$
+
+\textbf{$p(x)$ nima linearnih faktorjev $\iff$ nima ničel}\\
+
 \subsubsection*{Gaussova lema}
 \begin{multline*}
 	p(x) \in \mathbb{Z}[x] \text{ razcepen nad } \mathbb{Z} \\ \iff p(x) \text{ razcepen nad } \mathbb{Q}
@@ -205,7 +215,8 @@ Polinom $a_n x^n + \dots + a_0$ je \textbf{primitiven}, če velja $\gcd(a_0, \do
 \end{center}
 
 \subsubsection*{Eisensteinov kriterij}
-Naj bo $a(x) = a_n x^n + \dots + a_0 \in \mathbb{Z}[x]$ polinom. Če $\exists p \in \mathbb{P} : p | a_0, \dots, a_{n-1} \wedge p \nmid a_n \wedge p^2 \nmid a_0$, potem je $a(x)$ nerazcepen nad $\mathbb{Q}$.
+Naj bo $a(x) = a_n x^n + \dots + a_0 \in \mathbb{Z}[x]$ polinom.\\
+Če $\exists p \in \mathbb{P} : p | a_0, \dots, a_{n-1} \wedge p \nmid a_n \wedge p^2 \nmid a_0$\\ potem je $a(x)$ \textbf{nerazcepen} nad $\mathbb{Q}$.
 
 \subsubsection*{Rodovne funkcije}
 \[
