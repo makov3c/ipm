@@ -24,8 +24,12 @@ Kolobar je \textbf{kolobar z deljenjem}, če $\forall a \in R-\{0\}\ \exists a^{
 Kolobar, ki ima vse naštete lastnosti je \textbf{obseg}.
 
 \subsubsection*{Delitelji niča in celi kolobarji}
-Naj bo $R$ komutativen koloboar. Tedaj je $a \in R,\ a \neq 0$ \textbf{delitelj niča}, če
+Naj bo $R$ komutativen kolobar.\\
+$a \in R,\ a \neq 0$ \textbf{delitelj niča}, če
 \[ \exists b \in R,\ b \neq 0\ :\ ab = 0 \]
+
+Če ima kolobar $K$ enoto 1, rečemo, da je element $x  \in K$ \textbf{obrnljiv}, če $\exists y \in K\ :\ xy = 1$.\\
+Delitelji niča niso nikoli obrnljivi.\\
 
 \textbf{Cel kolobar} je komutativen kolobar z enoto ($1\neq0$), ki nima deliteljev niča.
 
@@ -89,6 +93,7 @@ Praslika 0 je $f^{-1}(0) = \{ a \in K \ |\ f(a) = 0\} = \text{Ker}f \leq K$.
 	\forall a \in K, \forall x \in \text{Ker} f:\ f(ax) = f(a)f(x) = 0 \\
 	\implies \text{Ker}f \lhd K
 \end{multline*}
+$\text{Ker} f = \{ x \in G | f(x) = e \}$ je jedro homomorfizma.
 
 \subsection*{Ideali}
 Podkolobar $I \leq K$ je ideal, če velja $I\cdot K \subseteq I$ in $K\cdot I \subseteq I$. Oznaka: $I \lhd K$.
@@ -139,8 +144,8 @@ Ideal $P$ v kolobarju $K$ je \emph{praideal}, če je $P \neq K$ in če $\forall 
 Naj bo $f: K \to L$ homomorfizem kolobarjev (velja tudi za grupe). Potem je $\text{Ker}f \lhd K$ in imamo naravni izomorfizem:
 \begin{align*}
 	\bar{f}: K/\text{Ker}f \to \text{Im}f\\
-	\bar{f} (x + \text{Ker}f) = f(x) \\
-	K/\text{Ker}f \cong \text{Im}f
+	K/\text{Ker}f \cong \text{Im}f \\
+	 |K/\text{Ker}f| = |\text{Im}f|
 \end{align*}
 
 \section*{Kolobarji polinomov}
@@ -187,6 +192,7 @@ Nekonstanten polinom, ki ni razcepen je \textbf{nerazcepen}.
 
 Polinom $a_n x^n + \dots + a_0$ je \textbf{primitiven}, če velja $\gcd(a_0, \dots, a_n) = 1$
 
+Kvadrati dajo pri deljenju s $4$ vedno ostanek $0$ ali $1$.\\
 \subsubsection*{Kandidati za ničle polinoma}
 
 Naj bo $p(x) = a_k x^k + \dots + a_0 ; \quad a_i \in \mathbb{Z}$. \\
@@ -235,6 +241,9 @@ Naj bo $a(x) = a_n x^n + \dots + a_0 \in \mathbb{Z}[x]$ polinom.\\
 \[ \frac{1}{(1-x)^n} = \sum_{k=0}^{n} \binom{n+k-1}{k} x^{k} \]
 \[ B_\lambda(x) = \sum_{n} \binom{\lambda}{n} x^{n} = (1+x)^\lambda; \qquad \binom{\lambda}{n} = \frac{\lambda^{\underline{n}}}{n!}\]
 
+\[ \binom{n}{k} = \frac{n!}{k!(n-k)!} \]
+\[ \binom{n}{k} = \binom{n-1}{k-1} + \binom{n-1}{k} \]
+
 \subsubsection*{Mobiusova formula}
 \begin{align*}
 	\mu(n) = \begin{cases}
@@ -259,7 +268,16 @@ Naj bo $a(x) = a_n x^n + \dots + a_0 \in \mathbb{Z}[x]$ polinom.\\
 \[\sum_{d|n} \varphi(d) = n\]
 
 \subsubsection*{Največji skupni delitelj}
-Za polinoma $a,b \in F[x]$ obstaja enolično določen največji skupni delitelj $d = \gcd(a,b)$.
+Naj bo $F$ obseg in $p, q \in F[x]$.\\
+največji skupni delitelj polinomov $p$ in $q$ je polinom $d = \text{gcd}(p,q)$, ki zadošča:\\
+\begin{itemize}
+	\item $d|p$ in $d|q$
+	\item vsak polinom, ki deli $p$ in $q$ deli tudi $d$
+	\item vodilni koeficient $d$ je enak $1$.
+\end{itemize}
+
+Največji skupni delitelj obstaja in je enolično določen. Obstajata polinoma $s$ in $t \in F[x]$ tako da velja:\\
+$$s\cdot p + t \cdot q = d$$
 \subsubsection*{Razširjen evklidov algoritem}
 \begin{algorithm}
 vhod: $(a, b)$
@@ -286,7 +304,15 @@ Gaussovo celo število $x \neq 0$, ki ni obrnljivo, je \textbf{nerazcepno}, če
 
 Liho praštevilo $p \in \mathbb{P}$ je nad $\mathbb{Z}[i]$ nerazcepno $\iff$ $p = 4k+3$
 
-Norma Gaussovega celega je $N(a+bi) = a^2 + b^2$.
+Norma Gaussovega celega št je $N(a+bi) = a^2 + b^2$.
+
+Norma je multiplikativna: $N(z \cdot w) = N(z)\cdot N(w)$\\
+
+$a + bi$ je obrnljivo $\implies \exists c + di \ni :  (a+bi)\cdot (c+di) = 1$\\
+Na desni strani uporabimo normo in dobimo: $N(a+bi) \cdot N(c+di) = 1 \cdot 1 = 1$\\
+$a + bi$ je obrnljivo $\iff N(a + bi) = 1$\\
+(leži na enotski krožinici)\\
+\textbf{Obrnljiva števila} so $1, -1, i, -i$\\
 
 Vsak par Gaussovih celih števil $z, w \in \mathbb{Z}[i]$  lahko zapišemo kot
 \[z = kw + r \]
